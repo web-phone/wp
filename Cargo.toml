@@ -1,0 +1,16 @@
+[package]
+name = "wp"
+authors = ["haruki7049 <tontonkirikiri@gmail.com>"]
+version = "0.1.0"
+description = "A CLI client for web-phone, WebRTC based calling system"
+edition = "2021"
+license = "MIT"
+readme = "README.md"
+homepage = "https://gitlab.com/web-phone/wp"
+repository = "https://gitlab.com/web-phone/wp"
+keywords = ["calling-system", "CLI"]
+categories = ["command-line-utilities"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
