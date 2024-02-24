@@ -5,9 +5,15 @@ rustPlatform.buildRustPackage rec {
 
   src = ./.;
 
-  cargoHash = "sha256-f6ZtjylvTvYw2f88ee6/gZZb/l6v2vT7pKgGWB8u0es=";
+  cargoHash = "sha256-sWQQ4n6+3xsIleIwNjj8TYENHBem/coxjRkCrP6ztt0=";
 
-  #meta = with lib; {
-  #  description = "A server for web-phone, WebRTC based calling system";
-  #}
+  buildInputs = [
+    rust-analyzer
+    rustfmt
+    clippy
+  ];
+
+  nativeBuildInputs = [
+    rust-analyzer
+  ];
 }
