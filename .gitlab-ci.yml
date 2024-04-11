@@ -1,21 +1,8 @@
 stages:
   - build
 
-rust-latest:
+nix-checks:
   stage: build
-  image: rust:latest
+  image: ghcr.io/nixos/nix:latest
   script:
-    - rustup component add clippy
-    - cargo build --verbose
-    - cargo test --verbose
-    - cargo clippy --verbose
-
-rust-nightly:
-  stage: build
-  image: rustlang/rust:nightly
-  script:
-    - rustup component add clippy
-    - cargo build --verbose
-    - cargo test --verbose
-    - cargo clippy --verbose
-  allow_failure: true
+    - nix --extra-experimental-features "nix-command flakes" flake check --all-systems
